@@ -1,4 +1,5 @@
 import Cabecalho from "Components/Cabecalho";
+import { Container } from "Components/Container";
 import { Rodape } from "Components/Robape";
 import { Favoritos } from "pages/Favoritos";
 import Inicio from "pages/inicio";
@@ -8,10 +9,12 @@ const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Cabecalho />
-      <Routes>
-        <Route path="/" element={<Inicio />}></Route>
-        <Route path="/favoritos" element={<Favoritos />}></Route>
-      </Routes>
+      <Container>
+        <Routes>
+          <Route path="/" element={<Inicio />}></Route>
+          <Route path="/favoritos" element={<Favoritos />}></Route>
+        </Routes>
+      </Container>n
       <Rodape />
     </BrowserRouter>
   );
