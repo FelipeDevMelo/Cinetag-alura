@@ -14,7 +14,7 @@ const AppRoutes = () => {
           <Route path="/" element={<Inicio />}></Route>
           <Route path="/favoritos" element={<Favoritos />}></Route>
         </Routes>
-      </Container>n
+      </Container>
       <Rodape />
     </BrowserRouter>
   );
