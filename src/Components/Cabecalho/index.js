@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Logo from "./logo.png";
 import styles from "./Cabecalho.module.css";
 import CabecalhoLink from "Components/CabecalhoLink";
+
 const Cabecalho = () => {
   return (
     <header className={styles.cabecalho}>
