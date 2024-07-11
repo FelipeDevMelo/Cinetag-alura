@@ -1,5 +1,7 @@
+import Cabecalho from "Components/Cabecalho";
+
 const Inicio = () => {
-  return <h1>hello world!</h1>;
+  return <Cabecalho />;
 };
 
 export default Inicio;
