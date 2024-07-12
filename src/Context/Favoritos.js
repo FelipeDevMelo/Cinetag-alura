@@ -5,6 +5,7 @@ FavoritosContext.displayName = "Favoritos";
 
 export default function FavoritosProvider({ children }) {
   const [favorito, setFavorito] = useState([]);
+ 
 
   return (
     <FavoritosContext.Provider value={{ favorito, setFavorito }}>
@@ -27,6 +28,7 @@ export function useFavorito() {
     }
 
     novaLista = favorito.filter((fav) => fav.id !== novoFavorito.id);
+    return setFavorito(novaLista);
   }
 
   return {
