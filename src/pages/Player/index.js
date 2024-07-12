@@ -3,12 +3,15 @@ import styles from "./Player.module.css";
 import { Titulo } from "Components/Titulo";
 import { useParams } from "react-router-dom";
 import Videos from "json/db.json";
+import { NaoEncontrada } from "pages/NaoEncontrada";
 export const Player = () => {
   const parametros = useParams();
   const video = Videos.find((video) => {
     return video.id === Number(parametros.id);
   });
-  console.log(video);
+  if (!video) {
+    return <NaoEncontrada />;
+  }
   return (
     <>
       <Banner imagem="player" />
