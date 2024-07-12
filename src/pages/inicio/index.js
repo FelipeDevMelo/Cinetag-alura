@@ -3,9 +3,20 @@ import { Banner } from "Components/Banner";
 import { Card } from "Components/Card";
 
 import { Titulo } from "Components/Titulo";
-import Videos from "json/db.json";
+
 import styles from "./inicio.module.css";
+import { useEffect, useState } from "react";
 const Inicio = () => {
+  const [Videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/videos")
+      .then((resposta) => resposta.json())
+      .then((dados) => {
+        setVideos(dados);
+      });
+  }, []);
+
   return (
     <>
       <Banner imagem="home" />

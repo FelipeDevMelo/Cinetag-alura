@@ -4,14 +4,17 @@ import { Titulo } from "Components/Titulo";
 import { useParams } from "react-router-dom";
 import Videos from "json/db.json";
 import { NaoEncontrada } from "pages/NaoEncontrada";
+import { useEffect, useState } from "react";
 export const Player = () => {
+  const [video, setVideo] = useState([]);
   const parametros = useParams();
-  const video = Videos.find((video) => {
-    return video.id === Number(parametros.id);
-  });
-  if (!video) {
-    return <NaoEncontrada />;
-  }
+  useEffect(() => {
+    fetch(`http://localhost:3000/videos/?id=${parametros.id}`)
+      .then((resposta) => resposta.json())
+      .then((dados) => {
+        setVideo(...dados);
+      });
+  }, []);
   return (
     <>
       <Banner imagem="player" />
